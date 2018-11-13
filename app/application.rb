@@ -17,6 +17,7 @@ class Application
       elsif req.path.match(/cart/)
       resp.write @@cart.empty? ? "Your cart is empty" : @@cart.join("\n")
       elsif req.path.match(/add/)
+      item = req.params["item"]
     else
       resp.write "Path Not Found"
     end
